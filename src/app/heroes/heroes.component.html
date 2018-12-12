@@ -1,0 +1,35 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
+
+<!-- <div *ngIf="selectedHero">
+
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
+
+</div> -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+
+<!-- <button type="button" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Swaps</button> -->
+
+<label>
+  Server Name
+</label>
+<!-- <input type="text" class="form-control" (input)= "onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <p>{{serverName}}</p> -->
+
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Swaps</button>
+<p>{{serverCreationStatus}}</p>
+ 
